@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete events</title>
+    <link rel="stylesheet" type="text/css" href="Index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<ul>
+    <li><a class="active" href="Index.html">Home</a></li>
+    <li><a href="Find.html">Find events</a></li>
+    <li><a href="Delete.html">Delete events</a></li>
+</ul>
+
+<div id="div5">
+    <p id="p1"> Vul hieronder een Event Id in :</p>
+    <input type="text" id="userInputFind"></input>
+</div>
+
+<br></br>
+    <button id="EnterFetchIdBtn" onclick="fetchData()">Enter</button>
+<br></br>
+<div id="div3">
+    <p id="outputId"> </p>
+    <p id="outputName"> </p>
+    <p id="outputStartDate"> </p>
+    <p id="outputEndDate"> </p>
+    <p id="outputPersonId"> </p>
+</div>
+
+
+
+<script id="source" language="javascript" type="text/javascript">
+
+    var urlFind = 'http://192.168.174.145/~user/MonkeyBusinessProject/api/findEventById.php?id=';
+
+
+    function fetchData() {
+        var userInputFind = document.getElementById("userInputFind").value;
+
+   var requestFind = new Request( urlFind + userInputFind, {
+       method: 'GET',
+       mode: 'no-cors',
+       redirect: 'follow',
+       headers: new Headers({
+           'Content-Type': 'text/plain'
+       })
+   });
+
+        fetch(requestFind)
+            .then(
+                function (responseFind) {
+                    if (responseFind.status !== 200) {
+                        console.log('Status Code: ' + responseFind.status);
+                        return;
+                    }
+                    responseFind.json().then(function (data) {
+
+                        document.getElementById("outputId").innerHTML = "Id van het event : " + data.Id;
+                        document.getElementById("outputName").innerHTML = "Naam van het event : " + data.Name;
+                        document.getElementById("outputStartDate").innerHTML = "Start datum van het event : " + data.StartDate;
+                        document.getElementById("outputEndDate").innerHTML = "Eind datum van het event : " + data.EndDate;
+                        document.getElementById("outputPersonId").innerHTML = "Id van de persoon gekoppeld aan het event : " + data.PersonId;
+
+
+
+                    });
+                    })
+            .catch(function (err) {
+                console.log(err);
+
+            });
+    }
+
+
+</script>
+</body>
+</html>

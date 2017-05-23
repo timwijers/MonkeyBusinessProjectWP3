@@ -1,0 +1,200 @@
+html{
+    background-color: white;
+    font-family: "PT Sans";
+    font-size: x-large;
+}
+
+#div1{
+    height: 90%;
+}
+#div2{
+    height: 30%;
+    background-image:url(https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_it.png);
+}
+
+
+input[type=text] {
+    background-color: whitesmoke;
+    color: white;
+}
+
+#p1{
+    margin-left: 3%;
+    margin-top : 3%;
+    font-family: "PT Sans";
+    font-size: x-large;
+}
+#userInputFind{
+    margin-left: 3%;
+    margin-top : 3%;
+    color: black;
+    font-family: "PT Sans";
+    font-size: x-large;
+}
+
+#EnterFetchIdBtn{
+    margin-left: 3%;
+    margin-top : 3%;
+    font-family: "PT Sans";
+    font-size: x-large;
+}
+
+#p2{
+    margin-left: 3%;
+    margin-top : 3%;
+    font-family: "PT Sans";
+    font-size: x-large;
+}
+
+#userInputDel{
+    margin-left: 3%;
+    margin-top : 3%;
+    color: black;
+    font-family: "PT Sans";
+    font-size: x-large;
+}
+
+#EnterDelIdBtn{
+    margin-left: 3%;
+    margin-top : 3%;
+    font-family: "PT Sans";
+    font-size: x-large;
+}
+
+#output1{
+    margin-left: 3%;
+    margin-top : 3%;
+}
+
+#output2{
+    margin-left: 3%;
+    margin-top : 3%;
+}
+
+#div3{
+    margin-left: 5.8%;
+    margin-top : 3%;
+    margin-right: 7%;
+    background-color: lightblue;
+    opacity: 0.6;
+    font-family: "PT Sans";
+    font-size: x-large;
+}
+
+
+#div4 {
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-right: 3%;
+    background-color: lightgray;
+}
+#div5 {
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-right: 3%;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+#EnterDelIdBtn {
+    background-color: lightblue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 5.8%;
+}
+
+#EnterFetchIdBtn{
+    background-color: lightblue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 5.8%;
+}
+
+#a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+
+#b.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+
+#btnX{
+    background-color: lightblue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 3%;
+}
+
+#btnY{
+    background-color: lightblue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 3%;
+}
+
+#DelBtn{
+    background-color: lightblue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 3%;
+}

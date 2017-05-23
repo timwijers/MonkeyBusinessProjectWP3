@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get events</title>
+    <link rel="stylesheet" type="text/css" href="Index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+<ul>
+    <li><a class="active" href="Index.html">Home</a></li>
+    <li><a href="Find.html">Find events</a></li>
+    <li><a href="Delete.html">Delete events</a></li>
+</ul>
+
+<div id="div5">
+    <p id="p2"> Vul hieronder de ID in van het event dat u wenst te verwijderen :</p>
+    <input type="text" id="userInputDel"></input>
+</div>
+
+
+<br></br>
+    <button id="EnterDelIdBtn" onclick="delData()">Delete</button>
+<br></br>
+
+    <div id="div3">
+        <p id="delSucceed"> </p>
+        <p id="outputId2"> </p>
+        <p id="outputName2"> </p>
+        <p id="outputStartDate2"> </p>
+        <p id="outputEndDate2"> </p>
+        <p id="outputPersonId2"> </p>
+    </div>
+</div>
+
+
+
+<script id="source" language="javascript" type="text/javascript">
+
+
+    var urlDelete = 'http://192.168.174.145/~user/MonkeyBusinessProject/api/deleteEventById.php?id=';
+    var urlFind = 'http://192.168.174.145/~user/MonkeyBusinessProject/api/findEventById.php?id=';
+
+    function delData() {
+
+        var userInputFindDel = document.getElementById("userInputDel").value;
+        var requestDelFind = new Request( urlFind + userInputFindDel, {
+            method: 'GET',
+            mode: 'no-cors',
+            redirect: 'follow',
+            headers: new Headers({
+                'Content-Type': 'text/plain'
+            })
+        });
+
+        fetch(requestDelFind)
+            .then(
+                function (responseDelFind) {
+                    if (responseDelFind.status !== 200) {
+                        console.log('Status Code: ' + responseDelFind.status);
+                        return;
+                    }
+                    responseDelFind.json().then(function (data2) {
+                        document.getElementById("delSucceed").innerHTML = "Het volgende event werd verwijderd :";
+                        document.getElementById("outputId2").innerHTML = "Id van het event : " + data2.Id;
+                        document.getElementById("outputName2").innerHTML = "Naam van het event : " + data2.Name;
+                        document.getElementById("outputStartDate2").innerHTML = "Start datum van het event : " + data2.StartDate;
+                        document.getElementById("outputEndDate2").innerHTML = "Eind datum van het event : " + data2.EndDate;
+                        document.getElementById("outputPersonId2").innerHTML = "Id van de persoon gekoppeld aan het event : " + data2.PersonId;
+
+
+                    });
+                })
+            .catch(function (err) {
+                console.log(err);
+
+            });
+
+        var userInputDel = document.getElementById("userInputDel").value;
+        var requestDel = new Request(urlDelete + userInputDel, {
+            method: 'GET',
+            mode: 'no-cors',
+            redirect: 'follow',
+            headers: new Headers({
+                'Content-Type': 'text/plain'
+            })
+        });
+
+        fetch(requestDel)
+            .then(
+                function (responseDel) {
+                    if (responseDel.status !== 200) {
+                        console.log('Status Code: ' + responseDel.status);
+                        return;
+                    }
+                    responseDel.json().then(function (data2) {
+                        JSON.stringify(data2);
+                    });
+                })
+            .catch(function (err) {
+                console.log(err);
+
+            });
+
+    }
+
+</script>
+</body>
+</html>
